@@ -442,12 +442,14 @@ header {
 }
 .servicios {
     padding: 5rem 2rem;
-    background: #f9f9f9;
 }
 .container-servicios {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    background: #eaf0f5;
+    width: 100%;
+    padding: 8rem 5%;
 }
 .servicios h2 {
     font-family: 'Cinzel', serif;
@@ -484,7 +486,14 @@ header {
     text-align: left;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid transparent;
+    border: 2px solid #e5b02e;
+    background: linear-gradient(135deg, #fff 0%, #fff8e1 100%);
+    animation: borderBlink 1.5s infinite;
+}
+@keyframes borderBlink {
+    0% { border-color: #e5b02e; box-shadow: 0 0 5px #e5b02e; }
+    50% { border-color: #ffd84d; box-shadow: 0 0 15px #ffd84d; }
+    100% { border-color: #e5b02e; box-shadow: 0 0 5px #e5b02e; }
 }
 .plan:hover {
     transform: translateY(-10px);
@@ -507,4 +516,27 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: #1a3f56;
+    margin: 0.6rem 0;
+    display: flex;
+    align-items: center;
+}
+.plan ul li::before {
+    content: "✔️";
+    margin-right: 0.5rem;
+}
+.btn-plan {
+    display: block;
+    background-color: #1a3f56;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-plan:hover {
+    background-color: #ffd700;
+    color: #000;
+    transform: scale(1.05);
 }
